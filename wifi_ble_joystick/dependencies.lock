@@ -1,0 +1,31 @@
+dependencies:
+  espressif/led_strip:
+    dependencies: []
+    source:
+      path: /home/pratik/backup_from_previous/esp/joystick_ble_cross_wifi/managed_components/espressif__led_strip
+      type: local
+    version: 3.0.2
+  espressif/usb:
+    dependencies: []
+    source:
+      path: /home/pratik/backup_from_previous/esp/joystick_ble_cross_wifi/managed_components/espressif__usb
+      type: local
+    version: 1.1.0
+  espressif/usb_host_hid:
+    dependencies: []
+    source:
+      path: /home/pratik/backup_from_previous/esp/joystick_ble_cross_wifi/managed_components/espressif__usb_host_hid
+      type: local
+    version: 1.0.4
+  idf:
+    source:
+      type: idf
+    version: 6.1.0
+direct_dependencies:
+- espressif/led_strip
+- espressif/usb
+- espressif/usb_host_hid
+- idf
+manifest_hash: e2ebdaf7f29d61290fc161e787223f99e38a147495a85951be83465a6dc185bc
+target: esp32s3
+version: 2.0.0

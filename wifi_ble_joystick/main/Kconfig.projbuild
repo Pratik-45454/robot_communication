@@ -1,0 +1,58 @@
+# menu "Example 'GATT SERVER' Config"
+
+#     config SET_RAW_ADV_DATA
+#         bool "Use raw data for advertising packets and scan response data"
+#         help
+#             If this config item is set, raw binary data will be used to generate advertising & scan response data.
+#             This option uses the esp_ble_gap_config_adv_data_raw() and esp_ble_gap_config_scan_rsp_data_raw()
+#             functions.
+
+#             If this config item is unset, advertising & scan response data is provided via a higher-level
+#             esp_ble_adv_data_t structure. The lower layer will generate the BLE packets. This option has higher
+#             overhead at runtime.
+
+# endmenu
+menu "Example Configuration"
+
+    choice BLE_MESH_EXAMPLE_BOARD
+        prompt "Board selection for BLE Mesh"
+        default BLE_MESH_ESP_WROOM_32 if IDF_TARGET_ESP32
+        default BLE_MESH_ESP32C3_DEV if IDF_TARGET_ESP32C3
+        default BLE_MESH_ESP32S3_DEV if IDF_TARGET_ESP32S3
+        default BLE_MESH_ESP32C6_DEV if IDF_TARGET_ESP32C6
+        default BLE_MESH_ESP32H2_DEV if IDF_TARGET_ESP32H2
+        help
+            Select this option to choose the board for BLE Mesh. The default is ESP32-WROOM-32
+
+        config BLE_MESH_ESP_WROOM_32
+            bool "ESP32-WROOM-32"
+            depends on IDF_TARGET_ESP32
+
+        config BLE_MESH_ESP_WROVER
+            bool "ESP32-WROVER"
+            depends on IDF_TARGET_ESP32
+
+        config BLE_MESH_ESP32C3_DEV
+            bool "ESP32C3-DevKitC"
+            depends on IDF_TARGET_ESP32C3
+
+        config BLE_MESH_ESP32S3_DEV
+            bool "ESP32S3-DevKitC"
+            depends on IDF_TARGET_ESP32S3
+
+        config BLE_MESH_ESP32C6_DEV
+            bool "ESP32C6-DevKitC"
+            depends on IDF_TARGET_ESP32C6
+
+        config BLE_MESH_ESP32H2_DEV
+            bool "ESP32H2-DevKitC"
+            depends on IDF_TARGET_ESP32H2
+
+        config BLE_MESH_ESP32C5_DEV
+            bool "ESP32C5-DevKitC"
+            depends on IDF_TARGET_ESP32C5
+
+    endchoice
+
+endmenu
+
